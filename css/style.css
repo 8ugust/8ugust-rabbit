@@ -1,9 +1,13 @@
+/* ==================== ==================== ==================== */
 body {
     margin: 0;
     width: 100%;
     height: 100%;
 }
 
+
+
+/* ==================== ==================== ==================== */
 .Header-wrap {
     top: 0;
     left: 0;
@@ -24,6 +28,9 @@ body {
     height: 150px;
 }
 
+
+
+/* ==================== ==================== ==================== */
 .Footer-wrap {
     left: 0;
     bottom: 0;
@@ -57,4 +64,20 @@ body {
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+
+
+/* ==================== ==================== ==================== */
+.Body-wrap {
+    width: 100%;
+    overflow: scroll;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    height: calc(100vh - 300px);
+}
+
+.test {
+    width: 100%;
+    height: 100vh;
 }
