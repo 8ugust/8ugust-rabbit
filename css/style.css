@@ -60,10 +60,18 @@ body {
     border-radius: 100px;
     background-color: #ea1c24;
 
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+
     display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
+}
+
+.Button-wrap:active {
+    background-color: #ad090e;
 }
 
 
@@ -130,5 +138,9 @@ body {
     border-radius: 10px;
     justify-content: center;
     background-color: #ea1c24;
+}
+
+.Content-button:active {
+    background-color: #ad090e;
 }
 
