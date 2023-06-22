@@ -77,7 +77,48 @@ body {
     height: calc(100vh - 300px);
 }
 
-.test {
-    width: 100%;
-    height: 100vh;
+.Bottom-line {
+    width: 90%;
+    margin-left: calc(5%);
+    margin-right: calc(5%);
+    border-bottom: 1px solid grey;
 }
+
+.Vertical-line {
+    height: 50%;
+    border-left: 1px solid grey;
+}
+
+
+
+/* ==================== ==================== ==================== */
+.Content-wrap {
+    width: calc(100% - 2px);
+    height: 200px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.Content-wrap p {
+    margin: 0;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+
+/* ==================== ==================== ==================== */
+.Content-date-wrap {
+    width: 20%;
+}
+
+.Content-title-wrap {
+    width: 50%;
+}
+
+.Content-button-wrap {
+    width: 30%;
+}
+
