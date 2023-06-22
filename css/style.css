@@ -110,15 +110,25 @@ body {
 
 
 /* ==================== ==================== ==================== */
-.Content-date-wrap {
+.Content-inner {
     width: 20%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
-.Content-title-wrap {
-    width: 50%;
-}
-
-.Content-button-wrap {
-    width: 30%;
+.Content-button {
+    width: 60%;
+    height: 40%;
+    display: flex;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    background-color: #ea1c24;
 }
 
