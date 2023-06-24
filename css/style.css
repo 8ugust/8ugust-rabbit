@@ -249,6 +249,10 @@ body {
     justify-content: center;
 }
 
+.Popup-button-wrap:active {
+    background-color: #ad090e;
+}
+
 .Button-line {
     height: 100%;
     border-left: 1px solid white;
