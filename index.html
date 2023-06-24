@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="shortcut icon" href="image/favicon.ico">
     <title>Webtoon Repository</title>
+    <link rel="shortcut icon" href="image/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
 <body>
     <!-- =============== HEADER =============== -->
@@ -75,6 +78,7 @@
                 <p>웹툰 제목</p>
                 <input class="Popup-title" id="title">
                 <p>마지막 열람 일자</p>
+                <input type="text" id="datepicker" readonly>
             </div>
             <div class="Popup-footer">
                 <div class="Popup-footer-inner" id="CreateWrap" style="display: none;">
@@ -92,6 +96,13 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function(){
+            $('#datepicker').datepicker({
+                dateFormat: 'yy-mm-dd'
+            });
+        });
+    </script>
     <!-- =============== POP UP =============== -->
 </body>
 </html>

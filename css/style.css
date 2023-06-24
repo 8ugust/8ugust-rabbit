@@ -200,9 +200,29 @@ body {
     width: 75%;
     height: 10%;
     font-size: 30px;
+    text-align: center;
     padding-left: 20px;
     padding-right: 20px;
+    border: 2px solid grey;
 }
+
+#datepicker {
+    width: 40%;
+    height: 10%;
+    font-size: 30px;
+    text-align: center;
+    border: 2px solid grey;
+}
+
+.ui-datepicker { 
+    left: calc(50% - 259px) !important;
+    width: 500px !important;
+    height: 500px !important;
+    font-size: 40px !important; 
+}
+
+#ui-datepicker-div td { width: 70px !important; }
+#ui-datepicker-div td a { text-align: center !important; }
 
 .Popup-footer {
     width: 100%;
