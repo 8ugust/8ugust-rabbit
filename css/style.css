@@ -144,3 +144,30 @@ body {
     background-color: #ad090e;
 }
 
+
+
+
+
+/* ==================== ==================== ==================== */
+.Popup-wrap {
+    left: 0;
+    top: 150px;
+    z-index: 10;
+    width: 100%;
+    border: none;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 300px);
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.Popup-box {
+    width: 80%;
+    height: 60%;
+    border-radius: 30px;
+    background-color: white;
+
+}
+
