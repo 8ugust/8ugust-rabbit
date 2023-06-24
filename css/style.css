@@ -166,8 +166,71 @@ body {
 .Popup-box {
     width: 80%;
     height: 60%;
+    overflow: hidden;
     border-radius: 30px;
     background-color: white;
-
 }
 
+.Popup-header {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    background-color: #ea1c24;
+}
+
+.Popup-body {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Popup-body p {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.Popup-title {
+    width: 75%;
+    height: 10%;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.Popup-footer {
+    width: 100%;
+    height: 20%;
+    background-color: #ea1c24;
+}
+
+.Popup-footer-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Popup-button-wrap {
+    height: 100%;
+    display: flex;
+    color: white;
+    font-size: 50px;
+    font-weight: bold;
+    align-items: center;
+    width: calc(50% - 1px);
+    justify-content: center;
+}
+
+.Button-line {
+    height: 100%;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+}
