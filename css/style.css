@@ -258,3 +258,30 @@ body {
     border-left: 1px solid white;
     border-right: 1px solid white;
 }
+
+
+
+
+
+/* ==================== ==================== ==================== */
+.Date-wrap {
+    left: 0;
+    top: 150px;
+    z-index: 15;
+    width: 100%;
+    border: none;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 300px);
+    background-color: rgba(0, 0, 0, 0.4)
+}
+
+.Date-box {
+    width: 70%;
+    height: 30%;
+    overflow: hidden;
+    border-radius: 30px;
+    background-color: white;
+}
