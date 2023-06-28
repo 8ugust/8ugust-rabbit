@@ -280,7 +280,7 @@ body {
 
 .Date-box {
     width: 70%;
-    height: 30%;
+    height: 20%;
     overflow: hidden;
     border-radius: 30px;
     background-color: white;
@@ -295,10 +295,12 @@ body {
 }
 
 .Date-body select {
-    width: 20%;
-    height: 20%;
-    font-size: 20px;
+    width: 23%;
+    height: 30%;
+    font-size: 25px;
     text-align: center;
+    border: 2px solid ;
+    border-radius: 20px;
 }
 
 .Date-body div {
