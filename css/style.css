@@ -297,14 +297,15 @@ body {
 .Date-body select {
     width: 20%;
     height: 20%;
+    font-size: 20px;
     text-align: center;
 }
 
 .Date-body div {
     width: 10%;
     height: 10%;
-    font-size: 50%;
     display: flex;
+    font-size: 20px;
     font-weight: bold;
     align-items: center;
     justify-content: center;
