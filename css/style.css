@@ -297,7 +297,8 @@ body {
 .Date-body select {
     width: 23%;
     height: 40%;
-    font-size: 25px;
+    font-size: 30px;
+    font-weight: bold;
     text-align: center;
     border: 2px solid ;
     border-radius: 20px;

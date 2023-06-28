@@ -4,6 +4,8 @@
     <title>Webtoon Repository</title>
     <link rel="shortcut icon" href="image/favicon.ico">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script type="text/javascript" src="js/main.js"></script>
+    
 </head>
 <body>
     <!-- =============== HEADER =============== -->
@@ -55,7 +57,7 @@
             </div>
             <div class="Vertical-line"></div>
             <div class="Content-inner" style="width: 25%;">
-                <div class="Content-button">수정</div>
+                <div class="Content-button" onclick="fnCloseModal('content', true)">수정</div>
             </div>
         </div> <div class="Bottom-line"></div>
 
@@ -64,7 +66,7 @@
     <!-- =============== FOOTER =============== -->
     <div class="Footer-wrap">
         <p>- 8ugust -</p>
-        <div class="Button-wrap">등록</div>
+        <div class="Button-wrap" onclick="fnCloseModal('content', true)">등록</div>
     </div>
     <!-- =============== FOOTER =============== -->
     <!-- =============== POP UP =============== -->
@@ -81,14 +83,14 @@
                 <div class="Popup-footer-inner" id="CreateWrap" style="display: none;">
                     <div class="Popup-button-wrap">등록</div>
                     <div class="Button-line"></div>
-                    <div class="Popup-button-wrap">취소</div>
+                    <div class="Popup-button-wrap" onclick="fnCloseModal('content')">취소</div>
                 </div>
                 <div class="Popup-footer-inner" id="UpdateWrap" >
                     <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);">수정</div>
                     <div class="Button-line"></div>
                     <div class="Popup-button-wrap" style="width: calc(100%/3 - 2px);">삭제</div>
                     <div class="Button-line"></div>
-                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);">취소</div>
+                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);" onclick="fnCloseModal('content')">취소</div>
                 </div>
             </div>
         </div>
@@ -99,17 +101,30 @@
         <div class="Date-box">
             <div class="Popup-header" style="height: 25%;">- DATE -</div>
             <div class="Date-body">
-                <select id="dateY"><option value="" hidden> YYYY </option><option value="a"> AAAA </option></select>
+                <select id="dateY"></select>
                 <div> ㅡ </div>
-                <select id="dateM"><option value="" hidden> MM </option></select>
+                <select id="dateM" onchange="fnChangeMonth(true)">
+                    <option value="1">01</option>
+                    <option value="2">02</option>
+                    <option value="3">03</option>
+                    <option value="4">04</option>
+                    <option value="5">05</option>
+                    <option value="6">06</option>
+                    <option value="7">07</option>
+                    <option value="8">08</option>
+                    <option value="9">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
                 <div> ㅡ </div>
-                <select id="dateD"><option value="" hidden> DD </option></select>
+                <select id="dateD"></select>
             </div>
             <div class="Popup-footer" style="height: 25%;">
                 <div class="Popup-footer-inner">
                     <div class="Popup-button-wrap">확인</div>
                     <div class="Button-line"></div>
-                    <div class="Popup-button-wrap">취소</div>
+                    <div class="Popup-button-wrap" onclick="fnCloseModal('date')">취소</div>
                 </div>
             </div>
         </div>
