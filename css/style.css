@@ -285,3 +285,27 @@ body {
     border-radius: 30px;
     background-color: white;
 }
+
+.Date-body {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Date-body select {
+    width: 20%;
+    height: 20%;
+    text-align: center;
+}
+
+.Date-body div {
+    width: 10%;
+    height: 10%;
+    font-size: 50%;
+    display: flex;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+}
