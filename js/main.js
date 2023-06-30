@@ -1,11 +1,23 @@
+// ==================== ====================
+// Global Variable
+// ==================== ====================
+this.today = 'hello';
+
+
+
+
+
 // ==================== ==================== ====================
 // Document OnLoad Event.
 // ==================== ==================== ====================
 document.addEventListener("DOMContentLoaded", function(){
-    // ==================== ====================
-    // Global Variable
-    // ==================== ====================
-    this.today = 'hello';
+    if (localStorage.getItem('contents') == null) {
+        localStorage.setItem('contents', "[]");
+    }
+
+    const storage = JSON.parse(localStorage.getItem('contents'));
+    
+    
 
     fnSetDate();
 });
@@ -70,10 +82,22 @@ const fnChangeMonth = (isChange) => {
 // ==================== ==================== ====================
 // Modal OFF Event
 // ==================== ==================== ====================
-const fnCloseModal = (id, isBlock) => {
+const fnShowHideModal = (id, isBlock) => {
     if (id == 'content') id = 'Popup-wrap';
     if (id == 'date')    id = 'Date-wrap';
     isBlock = isBlock ? 'flex' : 'none';
 
     document.getElementsByClassName(id)[0].style.display = isBlock;
+}
+
+
+
+
+
+// ==================== ==================== ====================
+// Modal ON Event
+// ==================== ==================== ====================
+const fnOpenModal = (id, value) => {
+    if (id == 'date') id = 'Date-wrap';
+
 }
