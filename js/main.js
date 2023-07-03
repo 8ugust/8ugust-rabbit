@@ -110,7 +110,7 @@ const fnChangeMonth = (isChange) => {
 
     parentD.value = (isChange) ? 1 : new Date().getDate();
     if (!isChange) {fnChangeDatepicker(new Date().toISOString().split('T')[0]);}
-}
+};
 
 
 
@@ -129,7 +129,7 @@ const fnChangeDatepicker = () => {
     const date = yy + '-' + mm + '-' + dd;
     document.getElementById('datepicker').value = date;
     fnShowHideModal('date', false);
-}
+};
 
 
 
@@ -163,11 +163,12 @@ const fnShowHideModal = (id, isBlock, isCreate, content_id) => {
         if (contents != null) contents.forEach(content => {
             if (content.id == content_id) {
                 document.getElementById('title').value = content.title;
+                document.getElementById('content_id').value = content_id;
                 document.getElementById('datepicker').value = content.date;
             }
         });
     }
-}
+};
 
 
 
@@ -177,8 +178,9 @@ const fnShowHideModal = (id, isBlock, isCreate, content_id) => {
 // Modal ON Event
 // ==================== ==================== ====================
 const fnCreateContent = () => {
-    if (document.getElementById('title').value == '') {
+    if (document.getElementById('title').value.replace(/ /g,"") == '') {
         document.getElementById('warningTitle').innerHTML = '웹툰 제목은 필수입니다.';
+        document.getElementById('title').value = "";
         fnShowHideModal('warning', true);
         return false;
     }
@@ -194,7 +196,32 @@ const fnCreateContent = () => {
 
     const newStorage = JSON.stringify(storage);
     localStorage.setItem('contents', newStorage);
+    localStorage.setItem('nextval', Number(localStorage.getItem('nextval')) + 1);
 
     fnShowHideModal('content', false);
     window.location.reload();
-}
+};
+
+
+
+
+
+// ==================== ==================== ====================
+// Delete Content Event
+// ==================== ==================== ====================
+const fnDeleteContent = () => {
+    const content_id = document.getElementById('content_id').value;
+    const storage = JSON.parse(localStorage.getItem('contents'));
+
+    let target_id = null;
+    for (let i=0; i<storage.length; i++) {
+        if (storage[i].id == content_id) {
+            target_id = i;
+            break;
+        }
+    }
+
+    storage.splice(target_id, 1);
+    localStorage.setItem('contents', JSON.stringify(storage));
+    window.location.reload();
+};
