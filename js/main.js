@@ -142,6 +142,7 @@ const fnShowHideModal = (id, isBlock, isCreate, content_id) => {
     // =============== =============== ===============
     // Show Popup-Wrap or Date-Wrap.
     // =============== =============== ===============
+    if (id == 'warning') id = 'Warning-wrap';
     if (id == 'content') id = 'Popup-wrap';
     if (id == 'date')    id = 'Date-wrap';
     document.getElementsByClassName(id)[0].style.display = isBlock ? 'flex' : 'none';
@@ -176,6 +177,12 @@ const fnShowHideModal = (id, isBlock, isCreate, content_id) => {
 // Modal ON Event
 // ==================== ==================== ====================
 const fnCreateContent = () => {
+    if (document.getElementById('title').value == '') {
+        document.getElementById('warningTitle').innerHTML = '웹툰 제목은 필수입니다.';
+        fnShowHideModal('warning', true);
+        return false;
+    }
+
     const content = {
         id:localStorage.getItem('nextval'),
         title:document.getElementById('title').value,
