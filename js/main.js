@@ -142,9 +142,10 @@ const fnShowHideModal = (id, isBlock, isCreate, content_id) => {
     // =============== =============== ===============
     // Show Popup-Wrap or Date-Wrap.
     // =============== =============== ===============
-    if (id == 'warning') id = 'Warning-wrap';
     if (id == 'content') id = 'Popup-wrap';
     if (id == 'date')    id = 'Date-wrap';
+    if (id == 'warning') { id = 'Warning-wrap'; document.getElementById('confirmWrap').style.display = 'none'; document.getElementById('alertWrap').style.display = 'flex'; }
+    if (id == 'confirm') { id = 'Warning-wrap'; document.getElementById('confirmWrap').style.display = 'flex'; document.getElementById('alertWrap').style.display = 'none'; }
     document.getElementsByClassName(id)[0].style.display = isBlock ? 'flex' : 'none';
 
     // =============== =============== ===============
@@ -175,7 +176,7 @@ const fnShowHideModal = (id, isBlock, isCreate, content_id) => {
 
 
 // ==================== ==================== ====================
-// Modal ON Event
+// Create Button Click Event on Modal.
 // ==================== ==================== ====================
 const fnCreateContent = () => {
     if (document.getElementById('title').value.replace(/ /g,"") == '') {
@@ -207,21 +208,47 @@ const fnCreateContent = () => {
 
 
 // ==================== ==================== ====================
-// Delete Content Event
+// Delete Button Click Event on Modal.
 // ==================== ==================== ====================
-const fnDeleteContent = () => {
+const fnOnClickDelete = (code) => {
+    let text = '';
+    if (code == 'delete') text = '삭제';
+    if (code == 'update')  text = '수정';
+    document.getElementById('warningTitle').innerHTML = (text + '하시겠습니까?');
+    fnShowHideModal('confirm', true);
+}
+
+
+
+
+// ==================== ==================== ====================
+// Delete or Update Content Event
+// ==================== ==================== ====================
+const fnDeleteOrUpdate = () => {
+    let code = document.getElementById('warningTitle').innerHTML;
+    if (code.indexOf('수정') != -1) code = 'update';
+    if (code.indexOf('삭제') != -1) code = 'delete';
+
+    // =============== =============== ===============
+    // Get Index of Content In Storage.
+    // =============== =============== ===============
     const content_id = document.getElementById('content_id').value;
     const storage = JSON.parse(localStorage.getItem('contents'));
-
-    let target_id = null;
-    for (let i=0; i<storage.length; i++) {
+    let target_id = null; for (let i=0; i<storage.length; i++) {
         if (storage[i].id == content_id) {
             target_id = i;
             break;
         }
     }
-
-    storage.splice(target_id, 1);
+    
+    // =============== =============== ===============
+    // Update or Delete Storage.
+    // =============== =============== ===============
+    if (code == 'update') {
+        storage[target_id].date  = document.getElementById('datepicker').value;
+        storage[target_id].title = document.getElementById('title').value;
+    } else { storage.splice(target_id, 1); }
+    
     localStorage.setItem('contents', JSON.stringify(storage));
     window.location.reload();
 };

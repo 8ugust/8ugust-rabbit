@@ -40,9 +40,9 @@
                     <div class="Popup-button-wrap" onclick="fnShowHideModal('content')">취소</div>
                 </div>
                 <div class="Popup-footer-inner" id="UpdateWrap" >
-                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);">수정</div>
+                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);" onclick="fnOnClickDelete('update')">수정</div>
                     <div class="Button-line"></div>
-                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 2px);" onclick="fnDeleteContent()">삭제</div>
+                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 2px);" onclick="fnOnClickDelete('delete')">삭제</div>
                     <div class="Button-line"></div>
                     <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);" onclick="fnShowHideModal('content')">취소</div>
                 </div>
@@ -94,8 +94,13 @@
                 </div>
             </div>
             <div class="Popup-footer" style="height: 25%;">
-                <div class="Popup-footer-inner">
+                <div class="Popup-footer-inner" id="alertWrap">
                     <div class="Popup-button-wrap" style="width: 100%;" onclick="fnShowHideModal('warning', false)">확인</div>
+                </div>
+                <div class="Popup-footer-inner" id="confirmWrap" style="display: none;">
+                    <div class="Popup-button-wrap" onclick="fnDeleteOrUpdate()">확인</div>
+                    <div class="Button-line"></div>
+                    <div class="Popup-button-wrap" onclick="fnShowHideModal('warning')">취소</div>
                 </div>
             </div>
         </div>
