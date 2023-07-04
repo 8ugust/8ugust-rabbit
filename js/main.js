@@ -99,6 +99,7 @@ const fnChangeMonth = (isChange) => {
     const Mnth = document.getElementById('dateM').value;
     const parentD = document.getElementById('dateD');
     const lastDate = new Date(Year, Mnth, 0).getDate();
+    while (parentD.firstChild) parentD.removeChild(parentD.firstChild);
 
     for (let i=1; i<=lastDate; i++) {
         let tag = document.createElement('option');
@@ -108,6 +109,7 @@ const fnChangeMonth = (isChange) => {
         parentD.appendChild(tag);
     }
 
+    console.log('Call');
     parentD.value = (isChange) ? 1 : new Date().getDate();
     if (!isChange) {fnChangeDatepicker(new Date().toISOString().split('T')[0]);}
 };
