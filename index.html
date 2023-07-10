@@ -8,103 +8,105 @@
     
 </head>
 <body>
-    <!-- =============== HEADER =============== -->
-    <div class="Header-wrap">
-        <img src="image/logo.png"/>
-    </div>
-    <!-- =============== HEADER =============== -->
-    <!-- ===============  BODY  =============== -->
-    <div class="Body-wrap" id="contentsBody"></div>
-    <!-- ===============  BODY  =============== -->
-    <!-- =============== FOOTER =============== -->
-    <div class="Footer-wrap">
-        <p>- 8ugust -</p>
-        <div class="Button-wrap" onclick="fnShowHideModal('content', true, true)">등록</div>
-    </div>
-    <!-- =============== FOOTER =============== -->
-    <!-- =============== POP UP =============== -->
-    <div class="Popup-wrap" style="display: none;">
-        <div class="Popup-box">
-            <div class="Popup-header">- CONTENTS -</div>
-            <div class="Popup-body">
-                <p>웹툰 제목</p>
-                <input class="Popup-title" id="title">
-                <p>마지막 열람 일자</p>
-                <input type="text" id="datepicker" readonly onclick="fnShowHideModal('date', true)">
-                <input type="text" id="content_id" value="" hidden>
-            </div>
-            <div class="Popup-footer">
-                <div class="Popup-footer-inner" id="CreateWrap" style="display: none;">
-                    <div class="Popup-button-wrap" onclick="fnCreateContent()">등록</div>
-                    <div class="Button-line"></div>
-                    <div class="Popup-button-wrap" onclick="fnShowHideModal('content')">취소</div>
+    <div class="body-center">
+        <!-- =============== HEADER =============== -->
+        <div class="Header-wrap">
+            <img src="image/logo_bck.png"/>
+        </div>
+        <!-- =============== HEADER =============== -->
+        <!-- ===============  BODY  =============== -->
+        <div class="Body-wrap" id="contentsBody"></div>
+        <!-- ===============  BODY  =============== -->
+        <!-- =============== FOOTER =============== -->
+        <div class="Footer-wrap">
+            <p>- 8ugust -</p>
+            <div class="Button-wrap" onclick="fnShowHideModal('content', true, true)">등록</div>
+        </div>
+        <!-- =============== FOOTER =============== -->
+        <!-- =============== POP UP =============== -->
+        <div class="Popup-wrap" style="display: none;">
+            <div class="Popup-box">
+                <div class="Popup-header">- CONTENTS -</div>
+                <div class="Popup-body">
+                    <p>웹툰 제목</p>
+                    <input class="Popup-title" id="title">
+                    <p>마지막 열람 일자</p>
+                    <input type="text" id="datepicker" readonly onclick="fnShowHideModal('date', true)">
+                    <input type="text" id="content_id" value="" hidden>
                 </div>
-                <div class="Popup-footer-inner" id="UpdateWrap" >
-                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);" onclick="fnOnClickDelete('update')">수정</div>
-                    <div class="Button-line"></div>
-                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 2px);" onclick="fnOnClickDelete('delete')">삭제</div>
-                    <div class="Button-line"></div>
-                    <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);" onclick="fnShowHideModal('content')">취소</div>
+                <div class="Popup-footer">
+                    <div class="Popup-footer-inner" id="CreateWrap" style="display: none;">
+                        <div class="Popup-button-wrap" onclick="fnCreateContent()">등록</div>
+                        <div class="Button-line"></div>
+                        <div class="Popup-button-wrap" onclick="fnShowHideModal('content')">취소</div>
+                    </div>
+                    <div class="Popup-footer-inner" id="UpdateWrap" >
+                        <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);" onclick="fnOnClickDelete('update')">수정</div>
+                        <div class="Button-line"></div>
+                        <div class="Popup-button-wrap" style="width: calc(100%/3 - 2px);" onclick="fnOnClickDelete('delete')">삭제</div>
+                        <div class="Button-line"></div>
+                        <div class="Popup-button-wrap" style="width: calc(100%/3 - 1px);" onclick="fnShowHideModal('content')">취소</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- =============== POP UP =============== -->
-    <!-- ===============  Date  =============== -->
-    <div class="Date-wrap" style="display: none;">
-        <div class="Date-box">
-            <div class="Popup-header" style="height: 25%;">- DATE -</div>
-            <div class="Date-body">
-                <select id="dateY"></select>
-                <div> ㅡ </div>
-                <select id="dateM" onchange="fnChangeMonth(true)">
-                    <option value="1">01</option>
-                    <option value="2">02</option>
-                    <option value="3">03</option>
-                    <option value="4">04</option>
-                    <option value="5">05</option>
-                    <option value="6">06</option>
-                    <option value="7">07</option>
-                    <option value="8">08</option>
-                    <option value="9">09</option>
-                    <option value="10">10</option>
-                    <option value="11">11</option>
-                    <option value="12">12</option>
-                </select>
-                <div> ㅡ </div>
-                <select id="dateD"></select>
-            </div>
-            <div class="Popup-footer" style="height: 25%;">
-                <div class="Popup-footer-inner">
-                    <div class="Popup-button-wrap" onclick="fnChangeDatepicker()">확인</div>
-                    <div class="Button-line"></div>
-                    <div class="Popup-button-wrap" onclick="fnShowHideModal('date')">취소</div>
+        <!-- =============== POP UP =============== -->
+        <!-- ===============  Date  =============== -->
+        <div class="Date-wrap" style="display: none;">
+            <div class="Date-box">
+                <div class="Popup-header" style="height: 25%;">- DATE -</div>
+                <div class="Date-body">
+                    <select id="dateY"></select>
+                    <div> ㅡ </div>
+                    <select id="dateM" onchange="fnChangeMonth(true)">
+                        <option value="1">01</option>
+                        <option value="2">02</option>
+                        <option value="3">03</option>
+                        <option value="4">04</option>
+                        <option value="5">05</option>
+                        <option value="6">06</option>
+                        <option value="7">07</option>
+                        <option value="8">08</option>
+                        <option value="9">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <div> ㅡ </div>
+                    <select id="dateD"></select>
+                </div>
+                <div class="Popup-footer" style="height: 25%;">
+                    <div class="Popup-footer-inner">
+                        <div class="Popup-button-wrap" onclick="fnChangeDatepicker()">확인</div>
+                        <div class="Button-line"></div>
+                        <div class="Popup-button-wrap" onclick="fnShowHideModal('date')">취소</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- ===============  Date  =============== -->
-    <!-- ===============Warning=============== -->
-    <div class="Warning-wrap" style="display: none;">
-        <div class="Warning-box">
-            <div class="Popup-header" style="height: 25%;">- Warning -</div>
-            <div class="Warning-body">
-                <div>
-                    <span id="warningTitle"></span>
+        <!-- ===============  Date  =============== -->
+        <!-- ===============Warning=============== -->
+        <div class="Warning-wrap" style="display: none;">
+            <div class="Warning-box">
+                <div class="Popup-header" style="height: 25%;">- Warning -</div>
+                <div class="Warning-body">
+                    <div>
+                        <span id="warningTitle"></span>
+                    </div>
                 </div>
-            </div>
-            <div class="Popup-footer" style="height: 25%;">
-                <div class="Popup-footer-inner" id="alertWrap">
-                    <div class="Popup-button-wrap" style="width: 100%;" onclick="fnShowHideModal('warning', false)">확인</div>
-                </div>
-                <div class="Popup-footer-inner" id="confirmWrap" style="display: none;">
-                    <div class="Popup-button-wrap" onclick="fnDeleteOrUpdate()">확인</div>
-                    <div class="Button-line"></div>
-                    <div class="Popup-button-wrap" onclick="fnShowHideModal('warning')">취소</div>
+                <div class="Popup-footer" style="height: 25%;">
+                    <div class="Popup-footer-inner" id="alertWrap">
+                        <div class="Popup-button-wrap" style="width: 100%;" onclick="fnShowHideModal('warning', false)">확인</div>
+                    </div>
+                    <div class="Popup-footer-inner" id="confirmWrap" style="display: none;">
+                        <div class="Popup-button-wrap" onclick="fnDeleteOrUpdate()">확인</div>
+                        <div class="Button-line"></div>
+                        <div class="Popup-button-wrap" onclick="fnShowHideModal('warning')">취소</div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- ===============Warning=============== -->
     </div>
-    <!-- ===============Warning=============== -->
 </body>
 </html>

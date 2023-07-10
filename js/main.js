@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (isExist != null) return;
 
         let textContent = '';
-        textContent += '<div id="content_id_' + content.id +'">';
+        textContent += '<div style="height:11%;" id="content_id_' + content.id +'">';
         textContent +=    '<div class="Content-wrap">';
         textContent +=        '<div class="Content-inner" style="width: 25%;">';
         textContent +=            '<p>' + content.date + '</p>';
