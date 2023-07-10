@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
         if (isExist != null) return;
 
         let textContent = '';
-        textContent += '<div style="height:11%;" id="content_id_' + content.id +'">';
+        textContent += '<div style="height: 11%;" id="content_id_' + content.id +'">';
         textContent +=    '<div class="Content-wrap">';
         textContent +=        '<div class="Content-inner" style="width: 25%;">';
         textContent +=            '<p>' + content.date + '</p>';
@@ -55,6 +55,11 @@ document.addEventListener("DOMContentLoaded", function(){
     // =============== =============== ===============
     // Set DatePicker First.
     // =============== =============== ===============
+    const contentsBody = document.getElementById('contentsBody');
+    const lastTemplate = document.createElement('div');
+    lastTemplate.style.height = '9%';
+
+    contentsBody.appendChild(lastTemplate);
     fnSetDate();
 });
 
