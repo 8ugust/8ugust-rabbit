@@ -109,7 +109,6 @@ const fnChangeMonth = (isChange) => {
         parentD.appendChild(tag);
     }
 
-    console.log('Call');
     parentD.value = (isChange) ? 1 : new Date().getDate();
     if (!isChange) {fnChangeDatepicker(new Date().toISOString().split('T')[0]);}
 };
@@ -194,8 +193,15 @@ const fnCreateContent = () => {
         date:document.getElementById('datepicker').value
     };
 
-    const storage = JSON.parse(localStorage.getItem('contents'));
+    let storage = JSON.parse(localStorage.getItem('contents'));
     storage.push(content);
+
+    storage = storage.sort((a, b) => {
+        const dateA = a.date.split('-').join('');
+        const dateB = b.date.split('-').join('');
+
+        return dateA - dateB;
+    });
 
     const newStorage = JSON.stringify(storage);
     localStorage.setItem('contents', newStorage);
